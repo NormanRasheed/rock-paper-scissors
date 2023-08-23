@@ -42,7 +42,24 @@ function playRound(playerSelection = prompt("make your choice"), computerSelecti
     let computerScore = 0;
 
     for(let i = 0; i < 5; i++){
-        console.log(playRound(playerSelection = prompt("make your choice"), computerSelection = getComputerChoice()));
+       let result = playRound(playerSelection = prompt("make your choice"), computerSelection = getComputerChoice());
+
+       console.log(result);
+
+       if(result.includes("win")){
+        playerScore++;
+        console.log(playerScore);
+       };
+       if(result.includes("lose")){
+        computerScore++;
+        console.log(computerScore);
+       };
     }
-    return
+    if(playerScore > computerScore){
+        return "Player has won"
+    } else if(playerScore === computerScore){
+        return "The game is a draw"
+    } else {
+        return "The computer has won"
+    }
   }
