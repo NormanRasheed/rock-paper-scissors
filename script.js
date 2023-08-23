@@ -48,12 +48,12 @@ function playRound(playerSelection = prompt("make your choice"), computerSelecti
 
        if(result.includes("win")){
         playerScore++;
-        console.log(playerScore);
        };
        if(result.includes("lose")){
         computerScore++;
-        console.log(computerScore);
        };
+       console.log(`The player score is:${playerScore}`);
+       console.log(`The computer score is:${computerScore}`);
     }
     if(playerScore > computerScore){
         return "Player has won"
